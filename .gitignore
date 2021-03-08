@@ -1,0 +1,6 @@
+db.sqlite3
+.idea/
+*.xml
+*.iml
+.DB_Store
+.env
