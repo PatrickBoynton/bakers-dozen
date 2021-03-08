@@ -12,6 +12,7 @@ django-allauth = "*"
 dj-database-url = "*"
 django-rest-auth = "*"
 psycopg2-binary = "*"
+pillow = "*"
 
 [dev-packages]
 
