@@ -15,28 +15,6 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                {/*Register*/}
-                <form action="">
-                    <label htmlFor="username">Username</label>
-                    <input type="text"/>
-                    <label htmlFor="email">Email</label>
-                    <input type="text"/>
-                    <label htmlFor="password1">Password</label>
-                    <input type="text"/>
-                    <label htmlFor="password2">Confirm Password</label>
-                    <input type="text"/>
-                    <button type="submit">Register</button>
-                </form>
-                {/*Login*/}
-                <form action="">
-                    <label htmlFor="username">Username</label>
-                    <input type="text"/>
-                    <label htmlFor="email">Email</label>
-                    <input type="text"/>
-                    <label htmlFor="password">Password</label>
-                    <input type="text"/>
-                    <button type="submit">Login</button>
-                </form>
                 {/*Ingredients form*/}
                 <form action="">
                     <label htmlFor="servings">Servings</label>
