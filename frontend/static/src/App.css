@@ -4,10 +4,15 @@
 form{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 30%;
+  border: 3px solid #282c34;
+  padding: 5px;
+}
+input{
+  border: 2px solid #282c34!important;
 }
 input:not(:last-child){
   margin: 5px 0;
-}
-button{
-  background-color: red;
 }
