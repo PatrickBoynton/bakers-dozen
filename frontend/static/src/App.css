@@ -20,4 +20,25 @@ input:not(:last-child){
 .thumb{
   width: 10%;
 }
+nav{
+  background-color: #888;
+  margin-top: 5%;
+  width: 20%;
+}
+a {
+  color: #eee;
+}
+li{
+  border-top: 3px solid #444;
+  border-right: 3px solid #444;
+}
+li:last-child{
+  border-bottom: 3px solid #444;
+}
+li:hover{
+  background-color: #8490aa;
+}
+a:hover{
+  color: #444;
+}
 
