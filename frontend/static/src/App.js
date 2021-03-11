@@ -1,6 +1,8 @@
 import './App.css';
 import {Component} from 'react';
-import Navigation from './components/layout/Navigation';
+import Navigation from './components/layout/Navigation/Navigation';
+import TopNavigation from './components/layout/Navigation/TopNavigation';
+import BatchAdjust from './components/layout/recipe/BatchAdjust';
 
 class App extends Component {
     constructor(props) {
@@ -17,7 +19,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Navigation/>
+                <BatchAdjust/>
             </div>
         );
     }
