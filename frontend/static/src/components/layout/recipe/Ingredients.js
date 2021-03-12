@@ -9,6 +9,7 @@ class Ingredients extends Component {
             // ingredients: '',
             title: '',
             name: '',
+            recipe_type: '',
         };
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -58,6 +59,13 @@ class Ingredients extends Component {
                 <input type="text" onChange={this.handleInput} value={this.state.title} name="title" id=""/>
                 <label htmlFor="name">Your Name</label>
                 <input type="text" onChange={this.handleInput} value={this.state.name} name="name"/>
+                <label htmlFor="recipe_type">Recipe Type</label>
+                <select name="recipe_type" id="recipe_type">
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="dessert">Dessert</option>
+                </select>
                 {/*<label htmlFor="ingredients">Ingredients</label>*/}
                 {/*{ingredientDisplay}*/}
                 {/*<input className="form-control"*/}
