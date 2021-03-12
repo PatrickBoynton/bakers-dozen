@@ -10,7 +10,9 @@ class App extends Component {
             <div className="App">
                 <Switch>
                     <Route path="/recipes" component={RecipeList}/>
-                    <Route path="/recipes/:id" component={RecipeDisplay}/>
+                    <Route path="/recipe/:id">
+                        <RecipeDisplay/>
+                    </Route>
                 </Switch>
             </div>
         );
