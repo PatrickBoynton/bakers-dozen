@@ -6,7 +6,7 @@ class Ingredients extends Component {
         super(props);
         this.state = {
             // ingredient_array: [],
-            // measurements: '',
+            // ingredients: '',
             title: '',
             name: '',
         };
