@@ -1,15 +1,18 @@
 import {Component} from 'react';
-
+import {NavLink} from 'react-router-dom';
 class Navigation extends Component {
     render() {
         return (
             <>
-                <nav className="nav flex-column">
-                    <li><a className="nav-link" href="#">My Recipes</a></li>
-                    <li><a className="nav-link" href="">Public Recipes</a></li>
-                    <li><a className="nav-link" href="">Popular Recipes</a></li>
-                    <li><a className="nav-link" href="">My Favorite Recipes</a></li>
-                    <li><a className="nav-link" href="">My Pantry</a></li>
+                <nav className="nav d-flex flex-column">
+                    <ul>
+                        <li><NavLink activeClassName="background" className="nav-link" to="/create-recipe">Create Recipe</NavLink></li>
+                        <li><NavLink activeClassName="background" className="nav-link" to="/recipes">My Recipes</NavLink></li>
+                        <li><NavLink activeClassName="background" className="nav-link" to="/public">Public Recipes</NavLink></li>
+                        <li><NavLink activeClassName="background" className="nav-link" to="/popular">Popular Recipes</NavLink></li>
+                        <li><NavLink activeClassName="background" className="nav-link" to="/favorites">My Favorite Recipes</NavLink></li>
+                        <li><NavLink activeClassName="background" className="nav-link" to="/ingredients">My Pantry</NavLink></li>
+                    </ul>
                 </nav>
             </>
         );
