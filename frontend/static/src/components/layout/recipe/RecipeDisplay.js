@@ -23,8 +23,8 @@ class RecipeDisplay extends Component {
 
     handleEdit(event) {
         event.preventDefault();
-        // console.log(event.target);
-        this.setState({redirect: true});
+        console.log(this.state.name, this.state.title, this.state.recipe_type);
+        // this.setState({redirect: true});
     }
 
     handleInput(event) {
@@ -36,7 +36,7 @@ class RecipeDisplay extends Component {
         const response = await fetch(`/api/v1/recipes/${id[id.length - 1]}/`);
         const data = await response.json();
         if (response !== null || response !== undefined) {
-            this.setState({recipe: data});
+            this.setState({name: data.name, title: data.title, recipe_type: data.recipe_type});
         }
     }
 
@@ -46,10 +46,10 @@ class RecipeDisplay extends Component {
                 this.state.isEditMode
                     ?
                     <>
-                        <form action="" onSubmit={() => this.handleEdit()}>
-                            <input name="title" onChange={this.handleInput} value={this.state.recipe.title}/>
-                            <input onChange={this.handleInput} value={this.state.recipe.name}/>
-                            <select onChange={this.handleInput} value={this.state.recipe_type}>
+                        <form action="" onSubmit={this.handleEdit}>
+                            <input name="title" onChange={this.handleInput} value={this.state.title}/>
+                            <input name="name" onChange={this.handleInput} value={this.state.name}/>
+                            <select onChange={this.handleInput} name="recipe_type">
                                 <option value="Breakfast">Breakfast</option>
                                 <option value="Lunch">Lunch</option>
                                 <option value="Dinner">Dinner</option>
@@ -59,16 +59,14 @@ class RecipeDisplay extends Component {
                     </>
                     :
                     <>
-                        <h2>{this.state.recipe.title}</h2>
-                        <p>{this.state.recipe.name}</p>
+                        <h2>{this.state.title}</h2>
+                        <p>{this.state.name}</p>
+                        <p>{this.state.recipe_type}</p>
                     </>
             }
             {/*TODO Make it so user is only one to edit recipe*/}
             <button onClick={() => this.handleEditMode()}>Edit Recipe</button>
         </section>;
-        if (this.state.redirect) {
-            return <Redirect to="/recipes"/>;
-        }
         return (
             <>
                 {recipe}
