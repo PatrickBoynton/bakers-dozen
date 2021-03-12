@@ -5,16 +5,7 @@ class Ingredients extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // unit_type: ['US', 'Metric'],
             // ingredient_array: [],
-            // recipe_type: ['Breakfast', 'Lunch', 'Dinner'],
-            // steps: [],
-            // step: '',
-            // ingredients: '',
-            // servings: 0,
-            // units: '',
-            // prep_time: '',
-            // cook_time: '',
             // measurements: '',
             title: '',
             name: '',
