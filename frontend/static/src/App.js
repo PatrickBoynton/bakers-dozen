@@ -1,12 +1,12 @@
 import './App.css';
 import {Component} from 'react';
-import Ingredients from './components/layout/recipe/Ingredients';
+import RecipeDisplay from './components/layout/recipe/RecipeDisplay';
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <Ingredients/>
+                <RecipeDisplay/>
             </div>
         );
     }
