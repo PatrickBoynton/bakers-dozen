@@ -10,9 +10,11 @@ class Ingredients extends Component {
             title: '',
             name: '',
             recipe_type: '',
+            is_public: false,
         };
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCheck = this.handleCheck.bind(this);
     }
 
     handleInput(event) {
@@ -46,6 +48,10 @@ class Ingredients extends Component {
         this.setState({title: this.state.title, name: this.state.name, recipe_type: this.state.recipe_type});
     }
 
+    handleCheck() {
+        this.setState((previousState) => ({is_public: !previousState.is_public}))
+    }
+
     render() {
         // const stepsDisplay = this.state.steps?.map(x => <textarea>{x}</textarea>);
         // const ingredientDisplay = this.state.ingredient_array?.map((x, index) => <div key={index}>
@@ -66,6 +72,8 @@ class Ingredients extends Component {
                     <option value="dinner">Dinner</option>
                     <option value="dessert">Dessert</option>
                 </select>
+                <label htmlFor="is_public">Would you like others to see your recipe?</label>
+                <input onClick={this.handleCheck} type="checkbox" name="is_public" value="true"/>
                 {/*<label htmlFor="ingredients">Ingredients</label>*/}
                 {/*{ingredientDisplay}*/}
                 {/*<input className="form-control"*/}
