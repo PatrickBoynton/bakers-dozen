@@ -11,6 +11,7 @@ class Ingredients extends Component {
             name: '',
             recipe_type: '',
             is_public: false,
+            yields: 0
         };
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -74,6 +75,8 @@ class Ingredients extends Component {
                 </select>
                 <label htmlFor="is_public">Would you like others to see your recipe?</label>
                 <input onClick={this.handleCheck} type="checkbox" name="is_public" value="true"/>
+                <label htmlFor="yields">Yield: </label>
+                <input type="number" name="yields" value={this.state.yields} id=""/>
                 {/*<label htmlFor="ingredients">Ingredients</label>*/}
                 {/*{ingredientDisplay}*/}
                 {/*<input className="form-control"*/}
