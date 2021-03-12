@@ -76,7 +76,7 @@ class Ingredients extends Component {
                 <label htmlFor="is_public">Would you like others to see your recipe?</label>
                 <input onClick={this.handleCheck} type="checkbox" name="is_public" value="true"/>
                 <label htmlFor="yields">Yield: </label>
-                <input type="number" name="yields" value={this.state.yields} id=""/>
+                <input type="number" onChange={this.handleInput} name="yields" value={this.state.yields} id=""/>
                 {/*<label htmlFor="ingredients">Ingredients</label>*/}
                 {/*{ingredientDisplay}*/}
                 {/*<input className="form-control"*/}
