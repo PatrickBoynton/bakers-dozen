@@ -8,7 +8,7 @@ from .serializers import RecipeSerializer
 class RecipListView(generics.ListCreateAPIView):
     queryset = models.Recipe.objects.all()
     serializer_class = RecipeSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 
 class RecipeDetailView(generics.RetrieveAPIView):
@@ -18,7 +18,7 @@ class RecipeDetailView(generics.RetrieveAPIView):
 
 
 class RecipeUpdateView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     lookup_field = 'pk'
     queryset = models.Recipe.objects.all()
     serializer_class = RecipeSerializer
