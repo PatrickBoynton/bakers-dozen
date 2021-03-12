@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import Cookies from 'js-cookie';
 
 class Ingredients extends Component {
     constructor(props) {
@@ -36,9 +37,21 @@ class Ingredients extends Component {
     //     this.setState({steps: [...this.state.steps, this.state.step]})
     // }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
         e.preventDefault();
-        this.setState({title: this.state.title, name: this.state.name})
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'Application/Json',
+                // 'X-CSRFToken': Cookies.get("csrftoken")
+            },
+            body: JSON.stringify({
+                title: this.state.title,
+                name: this.state.name
+            })
+        };
+        await fetch('/api/v1/recipes/', options);
+        this.setState({title: this.state.title, name: this.state.name});
     }
 
     render() {
