@@ -43,7 +43,7 @@ class Ingredients extends Component {
             })
         };
         await fetch('/api/v1/recipes/', options);
-        this.setState({title: this.state.title, name: this.state.name});
+        this.setState({title: this.state.title, name: this.state.name, recipe_type: this.state.recipe_type});
     }
 
     render() {
@@ -60,7 +60,7 @@ class Ingredients extends Component {
                 <label htmlFor="name">Your Name</label>
                 <input type="text" onChange={this.handleInput} value={this.state.name} name="name"/>
                 <label htmlFor="recipe_type">Recipe Type</label>
-                <select name="recipe_type" id="recipe_type">
+                <select name="recipe_type">
                     <option value="breakfast">Breakfast</option>
                     <option value="lunch">Lunch</option>
                     <option value="dinner">Dinner</option>
