@@ -5,6 +5,8 @@ import RecipeList from './components/layout/recipe/RecipeList';
 import RecipeDisplay from './components/layout/recipe/RecipeDisplay';
 import Ingredients from './components/layout/recipe/Ingredients';
 import Navigation from './components/layout/Navigation/Navigation';
+import Login from './components/user/Login';
+import Register from './components/user/Register';
 
 class App extends Component {
     render() {
@@ -12,6 +14,8 @@ class App extends Component {
             <div className="App">
                 <Navigation/>
                 <Switch>
+                    <Route path="/login" component={Login}/>
+                    <Route path="/register" component={Register} />
                     <Route path="/recipes" component={RecipeList}/>
                     <Route path="/recipe/:id">
                         <RecipeDisplay/>
