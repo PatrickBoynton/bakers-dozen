@@ -12,18 +12,14 @@ class RecipListView(generics.ListCreateAPIView):
 
 
 class RecipeDetailView(generics.RetrieveAPIView):
-    lookup_field = 'id'
+    lookup_field = 'pk'
     queryset = models.Recipe.objects.all()
     serializer_class = RecipeSerializer
 
 
-class RecipeUpdateView(generics.UpdateAPIView):
-    lookup_field = 'id'
+class RecipeUpdateView(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    lookup_field = 'pk'
     queryset = models.Recipe.objects.all()
     serializer_class = RecipeSerializer
 
-
-class RecipeDeleteView(generics.DestroyAPIView):
-    lookup_field = 'id'
-    queryset = models.Recipe.objects.all()
-    serializer_class = RecipeSerializer
