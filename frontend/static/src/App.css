@@ -31,6 +31,7 @@ input:not(:last-child){
 }
 nav{
   background-color: #888;
+  float: left;
   width: 20%;
 }
 .top-nav{
