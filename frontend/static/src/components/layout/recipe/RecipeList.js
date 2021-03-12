@@ -14,7 +14,7 @@ class RecipeList extends Component{
     }
 
     render() {
-        const recipes = this.state.recipes?.map(recipe => <section>
+        const recipes = this.state.recipes?.map(recipe => <section key={recipe.id}>
             <h2>{recipe.title}</h2>
             <p>{recipe.name}</p>
         </section> );
