@@ -3,6 +3,7 @@ import {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import RecipeList from './components/layout/recipe/RecipeList';
 import RecipeDisplay from './components/layout/recipe/RecipeDisplay';
+import Ingredients from './components/layout/recipe/Ingredients';
 
 class App extends Component {
     render() {
@@ -13,6 +14,7 @@ class App extends Component {
                     <Route path="/recipe/:id">
                         <RecipeDisplay/>
                     </Route>
+                    <Route path="/create-recipe" component={Ingredients}/>
                 </Switch>
             </div>
         );
