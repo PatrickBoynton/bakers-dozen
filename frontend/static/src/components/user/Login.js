@@ -2,20 +2,14 @@ import {Component} from 'react';
 
 class Login extends Component {
     render() {
-        return <form action="">
-            <label htmlFor="servings">Servings</label>
-            <input type="number" name="servings"/>
-            <select>
-                <option value="Fahrenheit">F</option>
-                <option value="Celsius">C</option>
-            </select>
-            <label htmlFor="ingredients">Ingredients</label>
-            <input type="text" name="ingredients"/>
-            <button>Add Ingredient</button>
-            <label htmlFor="measurements">Measurements</label>
-            <input type="text" name="measurements"/>
-            <button type="submit">Add Recipe</button>
-        </form>;
+        return (
+            <form>
+                <input type="text" name="username" id=""/>
+                <input type="email" name="email" id=""/>
+                <input type="password" name="password" id=""/>
+                <button className="btn btn-primary" type="submit">Login</button>
+            </form>
+        );
     }
 }
 

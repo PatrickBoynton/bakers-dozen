@@ -6,6 +6,8 @@ class Navigation extends Component {
             <>
                 <nav className="nav d-flex flex-column">
                     <ul>
+                        <li><NavLink activeClassName="background" className="nav-link" to="/login">Login</NavLink></li>
+                        <li><NavLink activeClassName="background" className="nav-link" to="/register">Register</NavLink></li>
                         <li><NavLink activeClassName="background" className="nav-link" to="/create-recipe">Create Recipe</NavLink></li>
                         <li><NavLink activeClassName="background" className="nav-link" to="/recipes">My Recipes</NavLink></li>
                         <li><NavLink activeClassName="background" className="nav-link" to="/public">Public Recipes</NavLink></li>
