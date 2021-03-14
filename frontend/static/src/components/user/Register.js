@@ -12,6 +12,8 @@ class Register extends Component {
                 <input type="text"/>
                 <label htmlFor="password2">Confirm Password</label>
                 <input type="text"/>
+                <label htmlFor="text">About Me</label>
+                <textarea cols="30" rows="3"></textarea>
                 <button className="btn btn-primary" type="submit">Register</button>
             </form>
         );
