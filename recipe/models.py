@@ -9,9 +9,10 @@ class Recipe(models.Model):
     is_public = models.BooleanField(null=True, blank=True)
     yields = models.IntegerField(null=True, blank=True)
     ingredient = models.JSONField(null=True, blank=True)
-    step = models.TextField()
-    notes = models.TextField()
-    image = models.ImageField()
+    amount = models.IntegerField(null=True, blank=True)
+    step = models.TextField(null=True, blank=True)
+    notes = models.TextField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.title
