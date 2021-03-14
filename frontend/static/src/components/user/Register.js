@@ -12,7 +12,7 @@ class Register extends Component {
                 <input type="text"/>
                 <label htmlFor="password2">Confirm Password</label>
                 <input type="text"/>
-                <button type="submit">Register</button>
+                <button className="btn btn-primary" type="submit">Register</button>
             </form>
         );
     }
