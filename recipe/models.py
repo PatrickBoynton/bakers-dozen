@@ -8,6 +8,10 @@ class Recipe(models.Model):
     recipe_type = models.CharField(max_length=20, null=True, blank=True)
     is_public = models.BooleanField(null=True, blank=True)
     yields = models.IntegerField(null=True, blank=True)
+    ingredient = models.JSONField(null=True, blank=True)
+    step = models.TextField()
+    notes = models.TextField()
+    image = models.ImageField()
 
     def __str__(self):
         return self.title
