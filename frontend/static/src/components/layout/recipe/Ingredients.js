@@ -5,13 +5,17 @@ class Ingredients extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // ingredient_array: [],
-            // ingredients: '',
+            ingredient_array: [],
+            ingredients: '',
             title: '',
             name: '',
             recipe_type: '',
             is_public: false,
-            yields: 0
+            yields: 0,
+            amount: 0,
+            image: '',
+            steps: [],
+            step: ''
         };
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,15 +26,20 @@ class Ingredients extends Component {
         this.setState({[event.target.name]: event.target.value});
     }
 
-    // addIngredient(e) {
-    //     e.preventDefault();
-    //     this.setState({ingredient_array: [...this.state.ingredient_array, this.state.ingredients]});
-    // }
-    //
-    // addStep(e) {
-    //     e.preventDefault();
-    //     this.setState({steps: [...this.state.steps, this.state.step]})
-    // }
+    addIngredient(e) {
+        e.preventDefault();
+        this.setState({ingredient_array: [...this.state.ingredient_array, this.state.ingredients]});
+    }
+
+    addAmount(e) {
+        e.preventDefault()
+        this.setState()
+    }
+
+    addStep(e) {
+        e.preventDefault();
+        this.setState({steps: [...this.state.steps, this.state.step]})
+    }
 
     async handleSubmit(e) {
         e.preventDefault();
@@ -55,13 +64,13 @@ class Ingredients extends Component {
 
     render() {
         // const stepsDisplay = this.state.steps?.map(x => <textarea>{x}</textarea>);
-        // const ingredientDisplay = this.state.ingredient_array?.map((x, index) => <div key={index}>
-        //     <input key={index} type="text" value={x} disabled/>
-        //     <button className="btn btn-danger" onClick={(e) => e.preventDefault()}>X</button>
-        // </div>);
+        const ingredientDisplay = this.state.ingredient_array?.map((x, index) => <div key={index}>
+             <input key={index} type="text" value={x} disabled/>
+             <button className="btn btn-danger" onClick={(e) => e.preventDefault()}>X</button>
+        </div>);
         return (
             <form action="" onSubmit={this.handleSubmit}>
-                <h2>Add an Ingredient</h2>
+                <h2>Add Recipe</h2>
                 <label htmlFor="title">Recipe Name</label>
                 <input type="text" onChange={this.handleInput} value={this.state.title} name="title" id=""/>
                 <label htmlFor="name">Your Name</label>
@@ -77,21 +86,24 @@ class Ingredients extends Component {
                 <input onClick={this.handleCheck} type="checkbox" name="is_public" value="true"/>
                 <label htmlFor="yields">Yield: </label>
                 <input type="number" onChange={this.handleInput} name="yields" value={this.state.yields} id=""/>
-                {/*<label htmlFor="ingredients">Ingredients</label>*/}
-                {/*{ingredientDisplay}*/}
-                {/*<input className="form-control"*/}
-                {/*       type="text"*/}
-                {/*       name="ingredients"*/}
-                {/*       value={this.state.ingredients}*/}
-                {/*       onChange={this.handleInput}/>*/}
-                {/*<button className="btn btn-success" onClick={(e) => this.addIngredient(e)}>Add Ingredient</button>*/}
-                {/*<label htmlFor="step">Steps</label>*/}
-                {/*<input className="form-control"*/}
-                {/*       type="text"*/}
-                {/*       value={this.state.step}*/}
-                {/*       onChange={this.handleInput}*/}
-                {/*       name="step"/>*/}
-                {/*<button className="btn btn-success mb-3" onClick={(e) => this.addStep(e)}>Add Steps</button>*/}
+                <label htmlFor="ingredients">Ingredients</label>
+                {ingredientDisplay}
+                <input className="form-control"
+                       type="text"
+                       name="ingredients"
+                       value={this.state.ingredients}
+                       onChange={this.handleInput}/>
+                <button className="btn btn-success" onClick={(e) => this.addIngredient(e)}>Add Ingredient</button>
+                <label htmlFor="amount">Amount of Ingredient</label>
+                <input type="number" name="amount" id=""/>
+                <label htmlFor="step">Steps</label>
+                <input className="form-control"
+                       type="text"
+                       value={this.state.step}
+                       onChange={this.handleInput}
+                       name="step"/>
+                <button className="btn btn-success mb-3" onClick={(e) => this.addStep(e)}>Add Steps</button>
+                <input className="file-upload btn" type="file" name="image" id=""/>
                 <button className="btn btn-primary" type="submit">Add Recipe</button>
             </form>
         );
